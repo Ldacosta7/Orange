@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formulaire Materiel"
+        android:textAlignment="center"
+        android:textSize="35dp" />
+
+    <!-- Nom -->
+    <EditText
+        android:id="@+id/editTextDesignation"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Designation"
+        android:padding="12dp" />
+
+    <!-- Prénom -->
+    <EditText
+        android:id="@+id/editTextMarque"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Marque"
+        android:padding="12dp" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editTextModele"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Modele"
+        android:padding="12dp" />
+
+    <!-- Téléphone -->
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Prix"
+        android:padding="12dp" />
+
+
+
+    <!-- Bouton Valider-->
+    <Button
+        android:id="@+id/Submit"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:text="Valider"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/buttonAccueil"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:padding="12dp"
+        android:text="Accueil" />
+</LinearLayout>

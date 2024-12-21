@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formulaire d'Intervention"
+        android:textAlignment="center"
+        android:textSize="35dp" />
+
+    <!-- Nom -->
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text|date"
+        android:hint="Date"
+        android:padding="12dp" />
+
+    <!-- Prénom -->
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Description"
+        android:padding="12dp" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editTextDuree"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text|datetime"
+        android:hint="Durée"
+        android:padding="12dp" />
+
+    <!-- Téléphone -->
+    <EditText
+        android:id="@+id/editTextStatut"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Statut"
+        android:padding="12dp" />
+
+    <!-- Adresse -->
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="Prix"
+        android:padding="12dp" />
+
+
+
+    <!-- Bouton S'inscrire -->
+    <Button
+        android:id="@+id/buttonValider"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:text="Valider"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/buttonAccueil"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:padding="12dp"
+        android:text="Accueil" />
+</LinearLayout>

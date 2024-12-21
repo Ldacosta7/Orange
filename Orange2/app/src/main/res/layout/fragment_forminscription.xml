@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <!-- Nom -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formulaire d'Inscription"
+        android:textAlignment="center"
+        android:textSize="35dp" />
+
+    <EditText
+        android:id="@+id/editTextLastname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Nom"
+        android:padding="12dp" />
+
+    <!-- Prénom -->
+    <EditText
+        android:id="@+id/editTextFirstname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Prénom"
+        android:padding="12dp" />
+
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:padding="12dp" />
+
+    <!-- Téléphone -->
+    <EditText
+        android:id="@+id/editTextTel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Téléphone"
+        android:padding="12dp" />
+
+    <!-- Adresse -->
+    <EditText
+        android:id="@+id/editTextAdresse"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="Adresse"
+        android:padding="12dp" />
+
+    <!-- Mot de Passe -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Mot de Passe"
+        android:inputType="textPassword"
+        android:padding="12dp" />
+
+
+    <!-- Bouton S'inscrire -->
+    <Button
+        android:id="@+id/buttonInsription"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:padding="12dp"
+        android:text="S'inscrire" />
+
+    <Button
+        android:id="@+id/buttonAccueil"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="10dp"
+        android:backgroundTint="#FF6600"
+        android:padding="12dp"
+        android:text="Accueil" />
+</LinearLayout>
