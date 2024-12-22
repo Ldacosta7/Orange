@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
         fragmentConnexion = new connexion();
         fragmentConnexion.setListener(this);
         fragmentIntervention = new FragmentIntervention();
+        fragmentIntervention.setListener(this);
         fragmentMateriel = new FragmentMateriel();
+        fragmentMateriel.setListener(this);
 
 
 
