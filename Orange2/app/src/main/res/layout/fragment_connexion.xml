@@ -5,74 +5,43 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
+    <!-- Nom -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Formulaire d'Intervention"
+        android:text="Formulaire de connexion"
         android:textAlignment="center"
         android:textSize="35dp" />
 
-    <!-- Nom -->
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:inputType="text|date"
-        android:hint="Date"
+        android:inputType="text"
+        android:hint="Email"
         android:padding="12dp" />
 
     <!-- Prénom -->
     <EditText
-        android:id="@+id/editTextDescription"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="Description"
+        android:hint="Mot de Passe"
         android:padding="12dp" />
-
-    <!-- Email -->
-    <EditText
-        android:id="@+id/editTextDuree"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="text|datetime"
-        android:hint="Durée"
-        android:padding="12dp" />
-
-    <!-- Téléphone -->
-    <EditText
-        android:id="@+id/editTextStatut"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Statut"
-        android:padding="12dp" />
-
-    <!-- Adresse -->
-    <EditText
-        android:id="@+id/editTextPrice"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Prix"
-        android:padding="12dp" />
-
 
 
     <!-- Bouton S'inscrire -->
     <Button
-        android:id="@+id/buttonValider"
+        android:id="@+id/buttonConnexion"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"
         android:backgroundTint="#FF6600"
-        android:text="Valider"
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:text="Se Connecter" />
 
     <Button
         android:id="@+id/buttonAccueil"

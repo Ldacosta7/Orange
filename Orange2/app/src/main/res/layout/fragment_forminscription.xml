@@ -75,7 +75,7 @@
 
     <!-- Bouton S'inscrire -->
     <Button
-        android:id="@+id/buttonInsription"
+        android:id="@+id/buttonInscription"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"

@@ -8,7 +8,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Formulaire Materiel"
+        android:text="Formulaire de Matériel"
         android:textAlignment="center"
         android:textSize="35dp" />
 
@@ -24,16 +24,6 @@
 
     <!-- Prénom -->
     <EditText
-        android:id="@+id/editTextMarque"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Marque"
-        android:padding="12dp" />
-
-    <!-- Email -->
-    <EditText
         android:id="@+id/editTextModele"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -42,21 +32,41 @@
         android:hint="Modele"
         android:padding="12dp" />
 
+    <!-- Email -->
+    <EditText
+        android:id="@+id/editTextMarque"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Marque"
+        android:padding="12dp" />
+
     <!-- Téléphone -->
+    <EditText
+        android:id="@+id/editTextDateAchat"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text|date"
+        android:hint="Date Achat"
+        android:padding="12dp" />
+
+    <!-- Adresse -->
     <EditText
         android:id="@+id/editTextPrice"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="textPostalAddress"
         android:hint="Prix"
         android:padding="12dp" />
 
 
 
-    <!-- Bouton Valider-->
+    <!-- Bouton S'inscrire -->
     <Button
-        android:id="@+id/Submit"
+        android:id="@+id/buttonValider"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"

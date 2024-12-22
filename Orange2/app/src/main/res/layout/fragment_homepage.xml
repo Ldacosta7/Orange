@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonAffichageInt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonDemandeMateriel"
-        app:layout_constraintTop_toBottomOf="@+id/buttonParametre" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInsription" />
 
     <Button
         android:id="@+id/buttonAffichageMat"
@@ -100,21 +100,21 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="27dp"
         android:backgroundTint="#FF6600"
-        android:text="Inscription"
+        android:text="Connexion"
         app:layout_constraintBottom_toTopOf="@+id/buttonDemandeMateriel"
-        app:layout_constraintEnd_toStartOf="@+id/buttonParametre"
+        app:layout_constraintEnd_toStartOf="@+id/buttonInsription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/buttonParametre"
+        android:id="@+id/buttonInsription"
         android:layout_width="130dp"
         android:layout_height="66dp"
         android:layout_marginTop="79dp"
         android:layout_marginEnd="53dp"
         android:layout_marginBottom="27dp"
         android:backgroundTint="#FF6600"
-        android:text="Connexion"
+        android:text="Inscription"
         app:layout_constraintBottom_toTopOf="@+id/buttonDemandeInter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonConnexion"
