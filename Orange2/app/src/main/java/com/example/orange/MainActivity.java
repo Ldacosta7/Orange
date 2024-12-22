@@ -2,16 +2,10 @@ package com.example.orange;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.datastore.preferences.core.Preferences;
 import androidx.datastore.preferences.rxjava2.RxPreferenceDataStoreBuilder;
 import androidx.datastore.rxjava2.RxDataStore;
-import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity implements ISelectButtonHomePage{
 
@@ -20,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
     private formintervention fragmentFormIntervention;
     private formmateriel fragmentFormmateriel;
     private connexion fragmentConnexion;
+    private FragmentIntervention fragmentIntervention;
+    private FragmentMateriel fragmentMateriel;
+
 
 
 
@@ -38,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
         fragmentFormmateriel.setListener(this);
         fragmentConnexion = new connexion();
         fragmentConnexion.setListener(this);
+        fragmentIntervention = new FragmentIntervention();
+        fragmentMateriel = new FragmentMateriel();
+
 
 
 
@@ -47,10 +47,14 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
                 .add(R.id.frameLayout, fragmentFormIntervention)
                 .add(R.id.frameLayout, fragmentFormmateriel)
                 .add(R.id.frameLayout, fragmentConnexion)
+                .add(R.id.frameLayout, fragmentIntervention)
+                .add(R.id.frameLayout, fragmentMateriel)
                 .hide(fragmentFormInscription)
                 .hide(fragmentFormmateriel)
                 .hide(fragmentFormIntervention)
                 .hide(fragmentConnexion)
+                .hide(fragmentIntervention)
+                .hide(fragmentMateriel)
                 .commit();
 
         RxDataStore<Preferences> dataStore = new RxPreferenceDataStoreBuilder(this, "dataStore").build();
@@ -91,12 +95,18 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
 
     @Override
     public void onSelectMaterielAffichage() {
-
+        getSupportFragmentManager().beginTransaction()
+                .hide(fragmentHomePage)
+                .show(fragmentMateriel)
+                .commit();
     }
 
     @Override
     public void onSelectInterventionAffichage() {
-
+        getSupportFragmentManager().beginTransaction()
+                .hide(fragmentHomePage)
+                .show(fragmentIntervention)
+                .commit();
     }
 
     @Override
@@ -106,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
                 .hide(fragmentFormmateriel)
                 .hide(fragmentFormIntervention)
                 .hide(fragmentConnexion)
+                .hide(fragmentIntervention)
+                .hide(fragmentMateriel)
                 .show(fragmentHomePage)
                 .commit();
     }

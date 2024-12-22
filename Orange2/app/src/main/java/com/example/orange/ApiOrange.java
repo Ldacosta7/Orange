@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class ApiOrange {
 
-    private static  String URL_API = "http://192.168.1.35:8080/api";
+    private static  String URL_API = "http://192.168.1.15:8080/api";
 
 
     public static void connectUser(Context context, User user, IConnexion observer )
