@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
 
     @Override
     public void onSelectMaterielAffichage() {
+        fragmentMateriel.refresh();
         getSupportFragmentManager().beginTransaction()
                 .hide(fragmentHomePage)
                 .show(fragmentMateriel)
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
 
     @Override
     public void onSelectInterventionAffichage() {
+        fragmentIntervention.refresh();
         getSupportFragmentManager().beginTransaction()
                 .hide(fragmentHomePage)
                 .show(fragmentIntervention)

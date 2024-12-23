@@ -94,6 +94,7 @@ public class connexion extends Fragment implements  View.OnClickListener, IConne
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("identifiant", user.getId());
             editor.putBoolean("loggedIn", true);
+            editor.putString("role", user.getRoles());
             editor.apply();
 
         }
