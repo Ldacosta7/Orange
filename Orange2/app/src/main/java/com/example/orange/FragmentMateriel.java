@@ -1,5 +1,7 @@
 package com.example.orange;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +26,16 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
 
 
     public void refresh(){
-        ApiOrange.getAllMateriels(getActivity(), 2, this);
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+        if(sharedPref.getString("role", "client").equals("client"))
+        {
+            ApiOrange.getMaterielsUser(getActivity(), sharedPref.getInt("identifiant", 0), this);
+
+        }else
+        {
+            ApiOrange.getAllMateriels(getActivity(), this);
+        }
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {

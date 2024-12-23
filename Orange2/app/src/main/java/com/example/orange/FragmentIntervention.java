@@ -1,5 +1,7 @@
 package com.example.orange;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +27,14 @@ public class FragmentIntervention extends Fragment implements View.OnClickListen
 
 
     public void refresh(){
-        ApiOrange.getAllInterventions(getActivity(), 2, this);
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+        if (sharedPref.getString("role", "client").equals("client"))
+        {
+            ApiOrange.getInterventionUser(getActivity(), sharedPref.getInt("identifiant", 0), this);
+        }else {
+            ApiOrange.getAllInterventions(getActivity(), this);
+        }
     }
 
     @Override
