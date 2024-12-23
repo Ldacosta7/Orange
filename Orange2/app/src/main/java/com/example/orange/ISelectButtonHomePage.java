@@ -16,5 +16,7 @@ public interface ISelectButtonHomePage {
 
     void onSelectAccueil();
 
+    void onSelectDeconnexion();
+
     void onAjoutUser();
 }

@@ -1,5 +1,8 @@
 package com.example.orange;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.datastore.preferences.core.Preferences;
@@ -75,6 +78,8 @@ public class connexion extends Fragment implements  View.OnClickListener, IConne
 
 
             ApiOrange.connectUser(getActivity(), user, this);
+            listener.onSelectAccueil();
+
 
         } else if (v.equals(buttonAccueil)) {
             listener.onSelectAccueil();
@@ -85,6 +90,11 @@ public class connexion extends Fragment implements  View.OnClickListener, IConne
     public void connect(User user) {
         if (editMdp.getText().toString().equals(user.getPassword()))
         {
+            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("identifiant", user.getId());
+            editor.putBoolean("loggedIn", true);
+            editor.apply();
 
         }
     }

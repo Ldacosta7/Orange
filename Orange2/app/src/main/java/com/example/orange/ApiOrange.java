@@ -14,8 +14,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 
 import java.time.LocalDate;
@@ -23,11 +25,13 @@ import java.util.ArrayList;
 
 public class ApiOrange {
 
+
     private static  String URL_API = "http://172.16.8.18:8080/api";
 
 
     public static void connectUser(Context context, User user, IConnexion observer )
     {
+
 
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest request = new StringRequest(URL_API + "/user/" + user.getEmail(),
@@ -46,7 +50,7 @@ public class ApiOrange {
                             user.setAdresse(object.get("adresse").getAsString());
                             user.setTel(object.get("tel").getAsString());
 
-
+                            Log.w("myApp", response);
                             observer.connect(user);
 
                     }
@@ -54,6 +58,7 @@ public class ApiOrange {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.w("myApp", error.toString());
 
                     }
                 }
@@ -162,6 +167,7 @@ public class ApiOrange {
         }
     }
 
+
     public static void getAllMateriels (Context context, Integer idUser, IMaterielObserver observer){
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest request = new StringRequest(URL_API + "/materiel/" + idUser,
@@ -242,6 +248,7 @@ public class ApiOrange {
             Log.w("myError", ex);
         }
     }
+
 
     public static void getAllInterventions (Context context, Integer idUser, IIterventionObserver observer){
         RequestQueue queue = Volley.newRequestQueue(context);

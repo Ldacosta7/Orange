@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
                 .hide(fragmentMateriel)
                 .commit();
 
-        RxDataStore<Preferences> dataStore = new RxPreferenceDataStoreBuilder(this, "dataStore").build();
+
 
     }
 
     @Override
     public void onSelectMaterielAjout() {
+
         getSupportFragmentManager().beginTransaction()
                 .hide(fragmentHomePage)
                 .show(fragmentFormmateriel)
@@ -125,6 +126,12 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
     }
 
     @Override
+    public void onSelectDeconnexion() {
+        this.onSelectAccueil();
+    }
+
+    @Override
+
     public void onAjoutUser() {
         getSupportFragmentManager().beginTransaction()
                 .hide(fragmentHomePage)

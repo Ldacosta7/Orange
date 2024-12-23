@@ -22,6 +22,7 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
 
     public void setListener(ISelectButtonHomePage listener){this.listener = listener; };
 
+
     public void refresh(){
         ApiOrange.getAllMateriels(getActivity(), 2, this);
     }
@@ -38,6 +39,7 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
 
         buttonAccueil = v.findViewById(R.id.buttonAccueil);
         buttonAccueil.setOnClickListener(this);
+
 
 
         this.refresh();

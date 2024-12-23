@@ -1,8 +1,13 @@
 package com.example.orange;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +35,7 @@ public class homepage extends Fragment implements View.OnClickListener {
     private Button buttonAffichageMateriel;
     private Button buttonAffichageIntervention;
     private ISelectButtonHomePage listener;
+
 
 
     public static homepage newInstance(String param1, String param2) {
@@ -75,25 +81,58 @@ public class homepage extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
 
         if (v.equals(buttonInscription))
         {
             listener.onSelectInscription();
         } else if (v.equals(buttonConnexion))
         {
-            listener.onSelectConnexion();
+            if (sharedPref.getBoolean("loggedIn", false))
+            {
+                editor.putBoolean("loggedIn", false);
+                editor.apply();
+                listener.onSelectDeconnexion();
+            }else {
+                listener.onSelectConnexion();
+            }
         } else if (v.equals(buttonDemandeMateriel))
         {
-            listener.onSelectMaterielAjout();
+            if (sharedPref.getBoolean("loggedIn", false))
+            {
+                listener.onSelectMaterielAjout();
+            }else{
+                listener.onSelectConnexion();
+            }
         } else if (v.equals(buttonDemandeIntervention))
         {
-            listener.onSelectInterventionsAjout();
+            if (sharedPref.getBoolean("loggedIn", false))
+            {
+                listener.onSelectInterventionsAjout();
+            }else{
+                listener.onSelectConnexion();
+            }
         } else if (v.equals(buttonAffichageMateriel))
         {
-            listener.onSelectMaterielAffichage();
+            if (sharedPref.getBoolean("loggedIn", false))
+            {
+                listener.onSelectMaterielAffichage();
+            }else {
+                listener.onSelectConnexion();
+            }
         } else if (v.equals(buttonAffichageIntervention))
         {
-            listener.onSelectInterventionAffichage();
+            if (sharedPref.getBoolean("loggedIn", false))
+            {
+                listener.onSelectInterventionAffichage();
+
+            }else {
+                listener.onSelectConnexion();
+
+            }
+
         }
     }
 }

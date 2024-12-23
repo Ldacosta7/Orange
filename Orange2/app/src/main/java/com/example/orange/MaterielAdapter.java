@@ -45,6 +45,7 @@ public class MaterielAdapter extends BaseAdapter {
         textViewMarque.setText(materiels.get(position).getMarque());
 
         TextView textViewPrix = convertView.findViewById(R.id.textViewMaterielPrix);
+
         textViewPrix.setText(materiels.get(position).getPrix()+"");
 
         TextView textViewDate = convertView.findViewById(R.id.textViewMaterielDate);

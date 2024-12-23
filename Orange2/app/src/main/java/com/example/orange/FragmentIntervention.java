@@ -23,6 +23,7 @@ public class FragmentIntervention extends Fragment implements View.OnClickListen
 
     public void setListener(ISelectButtonHomePage listener){this.listener = listener; };
 
+
     public void refresh(){
         ApiOrange.getAllInterventions(getActivity(), 2, this);
     }
@@ -40,6 +41,7 @@ public class FragmentIntervention extends Fragment implements View.OnClickListen
 
         buttonAccueil = v.findViewById(R.id.buttonAccueil);
         buttonAccueil.setOnClickListener(this);
+
 
         this.refresh();
         return v;
