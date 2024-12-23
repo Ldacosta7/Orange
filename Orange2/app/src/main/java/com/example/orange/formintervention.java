@@ -2,6 +2,7 @@ package com.example.orange;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -86,6 +87,7 @@ public class formintervention extends Fragment implements View.OnClickListener{
             intervention.setStatut(editStatut.getText().toString());
             intervention.setPrix(Integer.parseInt(editPrix.getText().toString()));
             intervention.setIdClient(sharedPref.getInt("identifiant", 0));
+
 
             ApiOrange.createIntervention(getActivity(), intervention, listener);
 

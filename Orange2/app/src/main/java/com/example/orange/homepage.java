@@ -2,11 +2,13 @@ package com.example.orange;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +84,7 @@ public class homepage extends Fragment implements View.OnClickListener {
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
+
         if (v.equals(buttonInscription))
         {
             listener.onSelectInscription();
@@ -129,6 +132,7 @@ public class homepage extends Fragment implements View.OnClickListener {
                 listener.onSelectConnexion();
 
             }
+
         }
     }
 }

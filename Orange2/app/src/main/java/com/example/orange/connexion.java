@@ -2,6 +2,7 @@ package com.example.orange;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.datastore.preferences.core.Preferences;
@@ -79,6 +80,7 @@ public class connexion extends Fragment implements  View.OnClickListener, IConne
             ApiOrange.connectUser(getActivity(), user, this);
             listener.onSelectAccueil();
 
+
         } else if (v.equals(buttonAccueil)) {
             listener.onSelectAccueil();
         }
@@ -93,6 +95,7 @@ public class connexion extends Fragment implements  View.OnClickListener, IConne
             editor.putInt("identifiant", user.getId());
             editor.putBoolean("loggedIn", true);
             editor.apply();
+
         }
     }
 }

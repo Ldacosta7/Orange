@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements ISelectButtonHome
     }
 
     @Override
+
     public void onAjoutUser() {
         getSupportFragmentManager().beginTransaction()
                 .hide(fragmentHomePage)

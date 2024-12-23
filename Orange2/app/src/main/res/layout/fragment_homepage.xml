@@ -101,6 +101,7 @@
         android:layout_marginBottom="27dp"
         android:backgroundTint="#FF6600"
         android:text="Connexion/Deconnexion"
+
         app:layout_constraintBottom_toTopOf="@+id/buttonDemandeMateriel"
         app:layout_constraintEnd_toStartOf="@+id/buttonInsription"
         app:layout_constraintStart_toStartOf="parent"

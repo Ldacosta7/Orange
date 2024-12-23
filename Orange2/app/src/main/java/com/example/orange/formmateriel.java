@@ -2,6 +2,7 @@ package com.example.orange;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -74,6 +75,7 @@ public class formmateriel extends Fragment implements  View.OnClickListener{
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
 
+
         if (v.equals(buttonMateriel))
         {
             Materiel materiel = new Materiel();
@@ -85,6 +87,7 @@ public class formmateriel extends Fragment implements  View.OnClickListener{
             materiel.setPrix(Integer.parseInt(editPrix.getText().toString()));
             materiel.setDateAchat(LocalDate.parse(editDateAchat.getText().toString(), formatterDate));
             materiel.setIdClient(sharedPref.getInt("identifiant", 0));
+
 
             ApiOrange.createMateriel(getActivity(), materiel, listener);
 
