@@ -14,16 +14,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ApiOrange {
 
-    private static  String URL_API = "http://192.168.1.15:8080/api";
+    private static  String URL_API = "http://172.16.8.18:8080/api";
 
 
     public static void connectUser(Context context, User user, IConnexion observer )
@@ -162,6 +162,38 @@ public class ApiOrange {
         }
     }
 
+    public static void getAllMateriels (Context context, Integer idUser, IMaterielObserver observer){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest request = new StringRequest(URL_API + "/materiel/" + idUser,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        ArrayList<Materiel> materiels = new ArrayList<Materiel>();
+                        JsonArray jsonArray = (JsonArray) JsonParser.parseString(response);
+                        for (int i = 0; i < jsonArray.size(); i++) {
+                            JsonObject object = jsonArray.get(i).getAsJsonObject();
+                            Materiel materiel = new Materiel();
+                          //  materiel.setId(object.get("id").getAsInt());
+                            materiel.setDesignation(object.get("designation").getAsString());
+                            materiel.setModele(object.get("modele").getAsString());
+                            materiel.setMarque(object.get("marque").getAsString());
+                            materiel.setPrix(Integer.parseInt(object.get("prix").getAsString()));
+                            materiel.setDateAchat(LocalDate.parse(object.get("dateAchat").getAsString()));
+                            materiels.add(materiel);
+                        }
+                        observer.onReceiveMateriel(materiels);
+                        }
+                    },
+                            new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                });
+        queue.add(request);
+    }
+
+
 
 
     public static void createIntervention(Context context, Intervention intervention, ISelectButtonHomePage listener)
@@ -210,4 +242,37 @@ public class ApiOrange {
             Log.w("myError", ex);
         }
     }
+
+    public static void getAllInterventions (Context context, Integer idUser, IIterventionObserver observer){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest request = new StringRequest(URL_API + "/intervention/" + idUser,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        ArrayList<Intervention> interventions = new ArrayList<Intervention>();
+                        JsonArray jsonArray = (JsonArray) JsonParser.parseString(response);
+                        for (int i = 0; i < jsonArray.size(); i++) {
+                            JsonObject object = jsonArray.get(i).getAsJsonObject();
+                            Intervention intervention = new Intervention();
+                            //  materiel.setId(object.get("id").getAsInt());
+                            intervention.setDateIntervention(LocalDate.parse(object.get("date_inter").getAsString()));
+                            intervention.setDescription(object.get("description").getAsString());
+                            intervention.setDuree(object.get("duree").getAsInt());
+                            intervention.setPrix(Integer.parseInt(object.get("prix").getAsString()));
+                            intervention.setStatut(object.get("statut").getAsString());
+                            interventions.add(intervention);
+                        }
+                        observer.onReceiveIntervention(interventions);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        queue.add(request);
+    }
+
+
 }

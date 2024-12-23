@@ -42,10 +42,10 @@ public class InterventionAdapter extends BaseAdapter {
         textViewDesc.setText(interventions.get(position).getDescription());
 
         TextView textViewDuree = convertView.findViewById(R.id.textViewInterventionDuree);
-        textViewDuree.setText(interventions.get(position).getDuree());
+        textViewDuree.setText(interventions.get(position).getDuree()+"");
 
         TextView textViewPrix = convertView.findViewById(R.id.textViewInterventionPrix);
-        textViewPrix.setText(interventions.get(position).getPrix());
+        textViewPrix.setText(interventions.get(position).getPrix()+"");
 
         TextView textViewStatut = convertView.findViewById(R.id.textViewInterventionStatut);
         textViewStatut.setText(interventions.get(position).getStatut());

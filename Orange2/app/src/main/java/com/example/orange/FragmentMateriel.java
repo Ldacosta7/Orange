@@ -21,6 +21,10 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
     private ISelectButtonHomePage listener;
 
     public void setListener(ISelectButtonHomePage listener){this.listener = listener; };
+
+    public void refresh(){
+        ApiOrange.getAllMateriels(getActivity(), 2, this);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,8 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
         buttonAccueil = v.findViewById(R.id.buttonAccueil);
         buttonAccueil.setOnClickListener(this);
 
+
+        this.refresh();
         return v;
     }
 
@@ -47,7 +53,7 @@ public class FragmentMateriel extends Fragment implements View.OnClickListener, 
     }
 
     @Override
-    public void onReceiveMAteriel(ArrayList<Materiel> materiels) {
+    public void onReceiveMateriel(ArrayList<Materiel> materiels) {
         this.materiels= materiels;
         MaterielAdapter adapter = new MaterielAdapter(getActivity(), this.materiels);
         listViewMateriel.setAdapter(adapter);
